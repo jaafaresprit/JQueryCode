@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var employeeJson = {
+                    "firstName" : "Todd",
+                    "lastName" : "Grover",
+                    "gender" : "Male",
+                    "salary" : 50000
+                };
+                var employeeArrayJson = [
+                {
+                    "firstName" : "Todd",
+                    "lastName" : "Grover",
+                    "gender" : "Male",
+                    "salary" : 50000
+                },
+                {
+                    "firstName" : "Sara",
+                    "lastName" : "Baker",
+                    "gender" : "Female",
+                    "salary" : 50000
+                }
+                ];
+                var employeeNestedObjJson = {
+                    "todd" : {
+                    "firstName" : "Todd",
+                    "lastName" : "Grover",
+                    "gender" : "Male",
+                    "salary" : 50000
+                    },
+                    "sara" : {
+                        "firstName" : "Sara",
+                        "lastName" : "Baker",
+                        "gender" : "Female",
+                        "salary" : 50000
+                    }
+                };
+                var result = "";
+                result += "First name : " + employeeJson.firstName +"<br/>"
+                        + "Last name : " + employeeJson.lastName +"<br/>"
+                        + "Gender : " + employeeJson.gender +"<br/>"
+                        + "Salary : " + employeeJson.salary +"<br/>";
+                $("#resultDiv").css("border","2px dashed blue");
+                $("#resultDiv").html(result);
+                $("#resultArrayDiv").css("border","2px dotted green");
+                $("#resultArrayDiv").html(employeeArrayJson[1].firstName);
+                $("#resultNestedObjDiv").html(employeeNestedObjJson.sara.lastName);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="resultDiv"></div>
+        <br>
+        <div id="resultArrayDiv"></div>
+        <br>
+        <div id="resultNestedObjDiv"></div>
+    </body>
+</html>

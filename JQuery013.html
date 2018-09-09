@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("input[name='skills']").click(function(){
+                    getCheckedCheckboxes("skills");
+                });
+                $("input[name='cities'").click(function(){
+                    getCheckedCheckboxes("cities");
+                });
+            });
+            var getCheckedCheckboxes = function(groupName){
+                var result = $("input[name='"+groupName+"']:checked");
+                if(result.length>0){
+                   var stringResult = result.length +" checkbox(es) was(were) cheched. <br/>";
+                    result.each(function(){
+                        var selectedVal = $(this).val();
+                        stringResult += selectedVal +" - "+ $("label[for='"+selectedVal+"']").text() +"<br/>"
+                    });
+                    $("#div"+groupName).html(stringResult);
+                }else{
+                    $("#div"+groupName).html(" No checkbox was cheched");
+                }
+            };
+        </script>
+    </head>
+    <body style="font-family:Arial">
+        Skills :
+        <input type="checkbox" name="skills" value="JS" />
+        <label for="JS">JavaScript</label>
+        <input type="checkbox" name="skills" value="JQ" />
+        <label for="JQ">jQuery</label>
+        <input type="checkbox" name="skills" value="CS" />
+        <label for="CS">C#.Net</label>
+        <input type="checkbox" name="skills" value="VB" />
+        <label for="VB">VB.Net</label>
+        <br /><br />
+        Preferred Cities :
+        <input type="checkbox" name="cities" value="NY" />
+        <label for="NY">New York</label>
+        <input type="checkbox" name="cities" value="ND" />
+        <label for="ND">New Delhi</label>
+        <input type="checkbox" name="cities" value="LD" />
+        <label for="LD">London</label>
+        <br /><br />
+        Selected Skills:<br />
+        <div id="divskills"></div>
+        <br />
+        Selected Cities:<br />
+        <div id="divcities"></div>
+    </body>
+</html>

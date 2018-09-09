@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="jquery-2.2.4.js"></script>
+        <!--<script type="text/javascript">
+            $(document).ready(function () {
+              //alert('Ready Event'); 
+              $('#div1').html("Height = "+$('#img1').height() +" <br/>"
+              +" Width = "+$('#img1').width());    
+            });
+        </script>-->
+        <script type="text/javascript">
+            $(window).load(function () {
+              //alert('Load Event'); 
+              $('#div1').html("Height = "+$('#img1').height() +" <br/>"
+              +" Width = "+$('#img1').width());    
+            });
+        </script>
+    </head>
+    <body>
+      <div id="div1"></div>
+      <img src="Hydrangeas.jpg" id="img1"/>
+    </body>
+</html>

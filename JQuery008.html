@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("[title='div1Title']").css("border","2px dashed blue");
+                $("div[title!='div1Title']").css("border","2px double green");
+                $("div:not([title='div1Title'])").css("border","2px double green");
+                $("[title*='myT']").css("border","3px dotted yellow");
+                $("[title~='mySpan']").css("border","3px dotted red");
+                $("[title|='myTitle']").css("border","3px dotted black");
+                $("[title^='start']").css("border","3px solid gray");
+                $("[title$='End']").css("border","3px solid orange");
+            });
+        </script>
+    </head>
+    <body>
+        <div title="div1Title">
+            DIV 1
+        </div>
+        <br />
+        <div title="div2Title">
+            DIV 2
+        </div>
+        <br/>
+        <div title="startWith2Title">
+            DIV 3
+        </div>
+        <p title="myTitle-paragraph">
+            This is a paragraph
+        </p>
+        <p title="myTitle">
+            This is a paragraph
+        </p>
+        <p title="myTitleHeading">
+            This is a paragraph
+        </p>
+        <span title="div1Title">
+            SAPN 1
+        </span>
+        <br /><br />
+        <span title="mySpan Heading">
+            SPAN 2
+        </span>
+        <br/><br/>
+        <span title="mySpanEnd">
+            SPAN 3
+        </span>
+    </body>
+</html>

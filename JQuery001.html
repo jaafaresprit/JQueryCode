@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script src="jquery-1.12.4.js"></script>
+    </head>
+    <body>
+      <!--<script type="text/javascript">
+          window.onload = function(){
+              if(document.addEventListener){
+                document.getElementById('button1').addEventListener('click',clickHandler,false);
+              }else{
+                document.getElementById('button1').attachEvent('onclick',clickHandler);
+              }
+          };
+          function clickHandler(){
+              alert('jQuery Tutoriel');
+          }
+      </script>  -->
+      <!--<script type="text/javascript">
+        jQuery(document).ready(function(){
+         jQuery('#button1').click(function(){
+             alert('jQuery Tutorial');
+         });   
+        });
+      </script>-->
+      <script type="text/javascript">
+        $(document).ready(function(){
+         $('#button1').click(function(){
+             alert('Ready Event');
+         });   
+        });
+        $(document).load(function(){
+         $('#button1').click(function(){
+             alert('Load Event');
+         });   
+        });
+      </script>
+      <!--<script type="text/javascript">
+        $(function(){
+         $('#button1').click(function(){
+             alert('jQuery Tutorial');
+         });   
+        });
+      </script>-->
+      <input type="button" id="button1" value="Click me"/>
+    </body>
+</html>

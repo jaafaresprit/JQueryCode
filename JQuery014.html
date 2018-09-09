@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).change(function () {
+                var oneSelectedOption = $("#selectCountries option:selected");
+                var oneSelectedCountry ="";
+                if(oneSelectedOption.val()!=""){
+                    oneSelectedCountry = "Value: "+oneSelectedOption.val() + " - Text: "+oneSelectedOption.text();
+                }else{
+                    oneSelectedCountry = ""; 
+                }
+                var multSelectedOption = $("#selectMultipleCountries option:selected");
+                var selectedCountries ="";
+                if(multSelectedOption.length>0 && multSelectedOption.val()!=""){
+                    multSelectedOption.each(function(){
+                        selectedCountries+="<br/>Value: "+$(this).val()+" - Text: "+$(this).text(); 
+                    });
+                }else{
+                    selectedCountries=""; 
+                }
+                $("#divResult").html(oneSelectedCountry +selectedCountries);
+            });
+        </script>
+    </head>
+    <body style="font-family:Arial">
+        Select one country:
+        <select id="selectCountries">
+            <option selected="selected" value=""></option>
+            <option value="USA">United States</option>
+            <option value="IND">India</option>
+            <option value="UK">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+        </select>
+        <br /><br />
+        Select multiple Countries:
+        <select id="selectMultipleCountries" multiple="multiple">
+            <option selected="selected" value=""></option>
+            <option value="USA">United States</option>
+            <option value="IND">India</option>
+            <option value="UK">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+        </select>
+        <hr/>
+        <div id="divResult"></div>
+    </body>   
+</html>

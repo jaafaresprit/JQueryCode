@@ -1,0 +1,47 @@
+
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("div[title]").filter(function(){
+                    return $(this).attr("title").toLocaleLowerCase()=='divtitle';
+                }).css("border","5px solid red");
+
+                $("div[title]").filter(function(){
+                    return (/Ri/i).test($(this).attr("title"));
+                }).css("border","3px solid orange");
+                //RegExp
+                $("div[title]").filter(function(){
+                    return  RegExp("Ri","i").test($(this).attr("title"));
+                }).css("border","3px solid orange");
+            });
+        </script>
+    </head>
+    <body>
+        <div title="DivTitle">
+                DIV 1
+        </div>
+        <br />
+        <div title="DIVTITLE">
+            DIV 2
+        </div>
+        <br />
+        <div title="divtitle">
+            DIV 3
+        </div>
+        <br>
+        <div title="Ri">
+                DIV 4
+        </div>
+        <br />
+        <div title="RI">
+            DIV 5
+        </div>
+        <br />
+        <div title="ri">
+            DIV 6
+        </div>            
+    </body>
+</html>

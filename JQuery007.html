@@ -1,0 +1,52 @@
+
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('[title]').css('border','4px dotted green');
+                $('div[title]').css('border','3px solid blue');
+                $('[title="div2Title"]').css('border','5px dashed gray');
+                $('p[title="pTitle"]').css('border','4px dashed red');
+                $('[title][style]').css('border','3px double black');
+                $('[title],[style]').css('border','3px double black');
+            });
+        </script>
+    </head>
+    <body>
+        <div title="div1Title">
+            DIV 1
+        </div>
+        <br />
+        <div title="div2Title">
+            DIV 2
+        </div>
+        <p title="pTitle">
+            This is a paragraph
+        </p>
+        <span title="div1Title">
+            SAPN 1
+        </span>
+        <br /><br />
+        <span>
+            SPAN 2
+        </span>
+        <hr/>
+        <div title="divTitle" style="background-color:red">
+            Red DIV
+        </div>
+        <br />
+        <div title="divTitle" style="background-color:green">
+            Green DIV
+        </div>
+        <br />
+        <div title="divTitle">
+            Normal Div
+        </div>
+        <br />
+        <div>
+            Normal Div without any attributes
+        </div>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+
+<html>
+        <head>
+            <title></title>
+            <script src="jquery-1.12.4.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('.small').css('border','5px solid red');
+                    $('.big,.small').css('border','2px dotted coral');
+                    $('.big,span.small').css('border','2px dotted MediumSeaGreen');
+                    $('#div1 .small').css('border','2px dotted Violet');
+                    $('.small.big').css('border','3px solid Red');
+                    $('.small.big').css('color','SlateBlue');
+                });
+            </script>
+        </head>
+        <body>
+            <span class="small">
+                Span 1
+            </span>
+            <br />
+            <div id='div1'>
+                <div class="">
+                        Div 1
+                </div>
+                <span class="small">
+                        Span 1
+                </span>
+            </div>
+            <br />
+            <div id='div2'>
+                 <div class="small big">
+                        SMALL BIG
+                </div>
+                <span class="small">
+                            Span 1
+                </span>
+            </div>
+            <br />
+            <div class="small">
+                Div 1
+            </div>
+            <br />
+            <span class="big">
+                Span 2
+            </span>
+            <p class="big">This is a paragraph</p>
+        </body>
+        </html>

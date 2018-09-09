@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                var employeesJSON = [
+                {
+                    "firstName": "Todd",
+                    "lastName": "Grover",
+                    "gender": "Male",
+                    "salary": 50000
+                },
+                {
+                    "firstName": "Sara",
+                    "lastName": "Baker",
+                    "gender": "Female",
+                    "salary": 40000
+                }
+                ];  
+                var result = JSON.stringify(employeesJSON);
+                $("#resultDiv").css("border","2px solid red");
+                $("#resultDiv").html(result);
+                var jsonString = $("#resultDiv").text();
+                $("#hr1").css("border","2px solid black");
+                var resultJsonString = "";
+                jsonObj = JSON.parse(jsonString);
+                $.each(jsonObj, function(i,item){
+                    resultJsonString += "First Name : " + item.firstName +" <br/>";
+                    resultJsonString += "Last Name : " + item.lastName +" <br/>";
+                    resultJsonString += "Gender : " + item.gender +" <br/>";
+                    resultJsonString += "Salary : " + item.salary +" <hr/>";
+                });
+            
+                $("#jsonObj").css("border","2px solid orange");
+                $("#jsonObj").html(resultJsonString);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="resultDiv"></div>
+        <hr id="hr1"/>
+        <div id="jsonObj"></div>
+    </body>
+</html>
