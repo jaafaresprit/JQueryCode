@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title></title>
+        <script src="jquery-1.12.4.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+               //$('div').attr('title','New DIV Title'); 
+               var divs = $('div');
+               divs.each(function(i){
+                   $(this).attr('title','NEW DIV '+(i+1)+' Title ');
+               });
+               divs.each(function(){
+                alert($(this).attr('title'));
+               });
+               var result = '';
+               result += 'Before remove Attribute number of existing title attribute : '+$('[title]').length+'<br>************************<br>';
+               $('div[title]').removeAttr('title');
+               var config = {
+                   'title' : 'New DIV Title',
+                   'style' : 'border:3px solid green',
+                   'name'  : 'MY DIV' 
+               };
+               var pars = $('p');
+               pars.attr(config);
+               
+               pars.each(function(){
+                   result += 'Title = '+$(this).attr('title')+'<br>';
+                   result += 'Style = '+$(this).attr('style')+'<br>';
+                   result += 'Name = '+$(this).attr('name')+'<br>******************<br>';
+               });
+               result += 'After remove Attribute number of existing title attribute :  '+$('[title]').length;
+               $('#resultPars').html(result);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="div1" title="My DIV1">
+            DIV 1
+        </div>
+        <div id="div2" title="My DIV2">
+            DIV 2
+        </div>
+        <p id="p1" title="My P1">
+            P 1
+        </p>
+        <p id="p2" title="My P2">
+            P 2
+        </p>
+        <span id="resultPars"></span>
+    </body>
+</html>
